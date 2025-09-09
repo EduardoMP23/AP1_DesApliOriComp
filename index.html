@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FakeStore SPA - Vanilla JS</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  
+  <body>
+    <header id="app-header"></header>
+
+    <main id="app" class="container">
+      
+      <section id="page-products" class="page" data-route="/products" aria-labelledby="title-products">
+        <h1 id="title-products" class="sr-only">Produtos</h1>
+        <div id="products-toolbar" class="toolbar">
+          <input
+            id="filter-input"
+            type="search"
+            placeholder="Filtrar por nome..."
+            aria-label="Filtrar produtos por nome"
+            autocomplete="off"
+          />
+          <span id="filter-count" class="muted"></span>
+        </div>
+        <div id="products-grid" class="grid"></div>
+      </section>
+
+      <section id="page-favorites" class="page" data-route="/favorites" aria-labelledby="title-favorites">
+        <h1 id="title-favorites" class="sr-only">Favoritos</h1>
+        <div class="muted" style="margin: .5rem 0 1rem">
+          Itens que você marcou com ♥ aparecem aqui.
+        </div>
+        <div id="favorites-grid" class="grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Dados via <a href="https://fakestoreapi.com" target="_blank" rel="noopener">Fake Store API</a>.</small>
+    </footer>
+
+    <div id="global-spinner" role="status" aria-live="polite" aria-busy="false" class="spinner hidden">
+      <div class="spinner-dot"></div>
+      <div class="spinner-dot"></div>
+      <div class="spinner-dot"></div>
+      <span class="sr-only">Carregando...</span>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
